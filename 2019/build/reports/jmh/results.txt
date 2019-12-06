@@ -1,0 +1,3 @@
+Benchmark          Mode  Cnt  Score   Error  Units
+FourBench.partOne  avgt    5  0.058 ± 0.003   s/op
+FourBench.partTwo  avgt    5  0.060 ± 0.011   s/op

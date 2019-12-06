@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "me.champeau.gradle.jmh" version "0.5.0"
 }
 
 group 'org.example'
@@ -13,4 +14,11 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/com.aparapi/aparapi
+    compile group: 'com.aparapi', name: 'aparapi', version: '1.10.0'
+
+}
+
+jmh {
+    fork = 0
 }

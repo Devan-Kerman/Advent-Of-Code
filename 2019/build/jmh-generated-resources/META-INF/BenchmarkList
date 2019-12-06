@@ -1,0 +1,2 @@
+JMH S 21 net.devtech.FourBench S 47 net.devtech.generated.FourBench_partOne_jmhTest S 7 partOne S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 21 net.devtech.FourBench S 47 net.devtech.generated.FourBench_partTwo_jmhTest S 7 partTwo S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 

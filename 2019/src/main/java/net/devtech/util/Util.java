@@ -1,12 +1,10 @@
 package net.devtech.util;
 
-import sun.net.www.http.HttpClient;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -15,11 +13,15 @@ public class Util {
 		return new BufferedReader(new InputStreamReader(Util.class.getResourceAsStream(resource))).lines();
 	}
 
-	public static Stream<String> getURL(String url) throws IOException {
-		HttpsURLConnection connection = (HttpsURLConnection) new java.net.URL(url).openConnection();
-		connection.addRequestProperty("cookie", "session="+getSession());
-		BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-		return reader.lines();
+	public static Stream<String> getURL(String url) {
+		try {
+			HttpsURLConnection connection = (HttpsURLConnection) new java.net.URL(url).openConnection();
+			connection.addRequestProperty("cookie", "session=" + getSession());
+			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			return reader.lines();
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
+		}
 	}
 
 	public static String getSession() {

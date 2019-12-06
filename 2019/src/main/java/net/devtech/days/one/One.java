@@ -1,10 +1,13 @@
-package net.devtech.days;
+package net.devtech.days.one;
 
 import net.devtech.util.Util;
 import java.io.IOException;
 
-public class Two {
+public class One {
 	public static void main(String[] args) throws IOException {
+		System.out.println("Part 1");
+		System.out.println(Util.getURL("https://adventofcode.com/2019/day/1/input").mapToInt(Integer::parseInt).map(i -> i / 3).map(i -> i - 2).sum());
+		System.out.println("Part 2");
 		int sum = Util.getURL("https://adventofcode.com/2019/day/1/input").mapToInt(Integer::parseInt).map(i -> {
 			int temp = i / 3 - 2;
 			int fuel = 0;
@@ -16,4 +19,5 @@ public class Two {
 		}).sum();
 		System.out.println(sum);
 	}
+
 }
